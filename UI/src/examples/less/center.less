@@ -1,0 +1,99 @@
+@import "base.less";
+
+@parent-bgcolor:#8B668B;
+@child-bgcolor:#87CEFA;
+@parent-height:60px;
+@child-height:40px;
+@child-width:40px;
+
+.example{
+    p{
+        padding-left:@space-base;
+    }
+
+    .parent{
+        .border-box;
+        height: 60px;
+        .linear-gradient(top,#FAEBD7,rgba(0,0,0,.20));
+        color:rgba(0,0,0,.85);
+    }
+
+    .child{
+        /*background-color: @child-bgcolor;*/
+        .linear-gradient(top,#FFF68F,#FFC125);
+        .box-shadow(0 1px 10px rgba(0,0,0,.3));        
+        height: 40px;
+        color:rgba(0,0,0,.55);
+
+        & + & {
+            padding-left: @space-huge;
+        }
+    }
+
+    div.child{
+        width:@child-width;       
+    }
+
+    span.child{
+        height: auto;
+    }
+
+    & + & {
+        margin-top:@space-large;
+        border-top:2px dashed #4682B4;
+    }
+}
+
+/*
+ * 此设置相当于将子类容器高度与父类容器高度一致，
+ * table-cell的基线与中线重合，设置vertical-align = middle可以使文本垂直居中
+ * 缺点：父类容器需要设置table样式，需要加宽度100%
+ */
+.example-align-middle-1{
+    display: table;
+    width:100%;
+
+    .child{
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+//内敛元素且高度确定用line-height=height
+.example-align-middle-2{
+    line-height: @parent-height;
+}
+
+ .example-center-y-1{
+     position:relative;
+
+     .child{
+         .absolute-center-y;
+     }
+ }
+
+ .example-center-y-2{
+     .flex-center-y;
+ }
+
+.example-center-xy-1{
+     position:relative;
+     text-align: center;
+
+     .child{
+         .absolute-center-xy;
+     }
+ }
+
+.example-center-xy-2{
+     position: relative;
+     text-align: center;
+     
+     .child{
+        .margin-center-xy; 
+     }
+ }
+
+.example-center-xy-3{
+    .flex-center-xy;
+}

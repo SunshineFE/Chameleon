@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>banner</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/banner.css">
+        <script type="text/javascript" src="../../../script/jquery.min.js"></script>
+        <script type="text/javascript" src="../scripts/banner.js"></script>
+        <script type="text/javascript" src="../scripts/banner-image.js"></script>
+    </head>
+    <body>
+        <div class="main">
+             <header class="header">
+                <div class="icon-button"><i class="font-icon icon-category"></i></div>
+                <form class="header-input">
+                    <div class="search-input">搜索商品/店铺</div>
+                    <i class="font-icon icon-search"></i>
+                </form>
+                <div class="icon-text">登录</div>
+            </header>
+
+            <div class="viewport">
+
+                 <section class="banner-container" id="banner-silder" style="height:170px">
+                    <ul class="banner-wrapper banner-wrapper-img" >
+                        <li class="banner-slide"><img class="j_SliderBanner" src="http://gw.alicdn.com/imgextra/i4/99/TB23fSWexBmpuFjSZFDXXXD8pXa_!!99-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" width="100%"></li>
+                        <li class="banner-slide"><img class="j_SliderBanner" src="http://gw.alicdn.com/imgextra/i1/23/TB2PIecduJ8puFjy1XbXXagqVXa_!!23-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" width="100%"></li>
+                        <li class="banner-slide"><img class="j_SliderBanner" src="http://gw.alicdn.com/imgextra/i1/16/TB2NHzFd98mpuFjSZFMXXaxpVXa_!!16-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" width="100%"></li>
+                        <li class="banner-slide"><img class="j_SliderBanner" src="http://img.alicdn.com/imgextra/i4/84/TB27VaydwJlpuFjSspjXXcT.pXa_!!84-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" width="100%"></li>
+                        <li class="banner-slide"><img class="j_SliderBanner" src="http://gw.alicdn.com/imgextra/i2/123/TB2SADsdB0lpuFjSszdXXcdxFXa_!!123-0-yamato.jpg_2200x2200Q30s0.jpg_.webp" width="100%"></li>
+                    </ul>
+                </section>         
+
+                 <section class="banner-container" id="banner-picture" style="height:170px">
+                    <ul class="banner-wrapper banner-wrapper-img" >
+                        <li class="banner-slide"><img src="http://ossgw.alicdn.com/biu/1486541643979-tLPThAq4u2cd1CBG.gif?getAvatar=1.gif" class="" width="100%"></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function(){
+                var bannerSilder = new __SY__BannerImage__("#banner-silder",{
+                    autoPlay:true,
+                    resetHeight:true
+                });
+            });
+        </script>
+
+        
+    </body>
+</html>

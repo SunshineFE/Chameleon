@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/alert.css">
+    <link rel="stylesheet" type="text/css" href="../css/clock-shadow.css">
+</head>
+
+<body>
+    <div class="main">
+        <header class="header bg-color-blue">
+            <div class="icon-button"><i class="font-icon icon-back"></i></div>
+            <div class="title">
+                <span>
+                    clock-shadow-clip
+                </span>
+            </div>
+            <div class="icon-button"><i class="font-icon icon-category"></i></div>
+        </header>
+
+        <div class="viewport">
+
+        </div>
+
+        <div class="popup-view">
+            <div class="popup-container">
+                <div class="clock-container">
+
+                    <div class="clock-wrapper left">
+                        <div class="clock"></div>
+                    </div>
+                    <div class="clock-wrapper right">
+                        <div class="clock"></div>
+                    </div>
+                    <div class="clock-wrapper left-mask"></div>
+                    <!--<div class="clock-wrapper right-mask"></div>-->
+
+                    <div class="number percentage">0</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        var $ = function(str){
+                return document.querySelector(str);
+            }
+        var timeout = 1000;
+        var total = 60;
+        var totalDeg = 360;
+        var halfDeg = 180;
+        var stepDeg = totalDeg/total;
+        var start = 0;
+        var current = 0;
+        var time = 1;
+        var circle = true;
+        var timer = null;
+        var $number = $('.number');
+        var $left = $('.clock-wrapper.left');
+        var $right = $('.clock-wrapper.right');
+        var leftStyle = $left.style;
+        var rightStyle = $right.style;
+        var init = function(){
+            setTransform(leftStyle,start);
+            setTransform(rightStyle,start);
+            current = start;
+            $number.innerHtml = time;            
+        }
+        
+        var setTransform = function(style,num){
+            style.transform = "rotate(" + num + "deg)";
+        }
+        var pause = function(){
+            timer && clearInterval(timer);
+        }
+        var stop = function(){
+            !circle && timer && clearInterval(timer)
+        }
+        var handleStart = function(){
+            timer = setInterval(function(){
+                
+                if(time > total){
+                    time = 1;
+                    current = start;
+                    $right.classList.remove('show');
+                    setTransform(rightStyle,start);
+                }else if(time == total/2 + 1){
+                    $right.classList.add('show');
+                }
+
+                current += stepDeg;
+                
+                if(time <= total/2){
+                    setTransform(leftStyle,current);
+                }else{
+                    setTransform(rightStyle,current);
+                }
+
+                time > total ? total:time;
+                time < 0 ? 0:time;
+                $number.innerHTML = time;
+
+                if(time == total/2){
+                    current = start;
+                }
+                time == 0 && stop();
+                time ++;
+            },timeout)
+        }
+        var onload = function(){
+            
+            init();
+            handleStart();
+            
+        }  
+    </script>
+</body>
+
+</html>

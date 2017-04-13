@@ -1,0 +1,103 @@
+@import "base.less";
+
+.login-page{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background:url("../images/timg1.jpeg") fixed top no-repeat;
+    background-size: cover;
+
+    .cover{
+        width:100%;
+        height: 100%;
+        background:rgba(100,196,255,0.2);
+    }
+
+    .personal{
+        .margin-center-xy;
+        width:80vw;
+        height: 85vh;
+        background: rgba(255,255,255,0.5);
+        &.bg-active{
+            background: rgba(102,102,153,0.8)!important;
+
+            .content-top,.content-mask{
+                display: none;
+            }
+        }
+
+        .header{
+            position:absolute;
+            background:transparent;
+
+            .icon-button{
+                padding:20px 10px;
+            }
+            .font-icon{
+                color:rgba(221,236,240,.5);
+                font-size: 24px;
+            }
+        }
+
+        .content-top,.content-mask{
+            width:100%;
+            height:35%;
+
+            &.hide{
+                .opacity(0);
+                .transition(.2s linear);
+            }
+        }
+
+        .content-top{
+            position:relative;
+            
+            background:url("../images/timg6.jpeg") fixed top no-repeat;
+            background-size: cover;
+        }
+
+        .content-mask{
+            background: rgba(0,51,102,0.4);
+            position:absolute;
+            top:0;
+            width:100%;
+            height:35%;
+        }
+
+        .person-button{
+            position: absolute;
+            bottom:10px;
+            right:10px;
+            width:46px;
+            height:46px;
+            .radius(100%);
+            background-color:rgba(255,0,102,.7);
+            /*.box-shadow(0 0 5px 2px rgba(0,0,0,.3));*/
+
+            &.active{
+                .transform(scale(17));
+                .transition(.5s linear);
+                bottom:250px;
+                right:150px;
+                /*.transform(origin,31px 41px);*/
+
+                .font-icon{
+                    font-size:0;
+                }
+            }
+
+            &.hide{
+                display: none;
+            }
+
+            .font-icon{
+                .absolute-center-xy;
+                color:rgba(255,255,255,0.7);
+                font-size:@font-size-bigger;
+            }
+        }
+
+    }
+}

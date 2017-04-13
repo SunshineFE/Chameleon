@@ -1,0 +1,68 @@
+@import "animation.less";
+@import "utils.less";
+@import "flex.less";
+
+.inline-center-x{
+    text-align:center;
+}
+
+.margin-center-x(@prop:fixed-width){
+    & when (@prop = fixed-width){
+        margin:0 auto;
+    }
+}
+
+//父类容器必须设置为非static定位
+.margin-center-xy{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+
+//父类容器必须设置为非static定位
+.absolute-center-y{
+    position: absolute;
+    top:50%;
+    .transform(translate3d(0,-50%,0));
+}
+
+//父类容器必须设置为非static定位
+.absolute-center-x{
+    position: absolute;
+    top:50%;
+    .transform(translate3d(0,-50%,0));
+}
+
+//父类容器必须设置为非static定位
+.absolute-center-xy{
+    position: absolute;
+    left:50%;
+    top:50%;
+    .transform(translate3d(-50%,-50%,0));
+}
+
+.flex-center-y{
+    .display-flex();
+    .align-items(center);
+}
+
+.flex-center-x{
+    .display-flex();
+    .flex-align(center);
+}
+
+.flex-center-y{
+    .display-flex();
+    .align-items(center);
+}
+
+.flex-center-xy{
+    .display-flex();
+    .flex-align(center);
+    .align-items(center);
+}
+
+   

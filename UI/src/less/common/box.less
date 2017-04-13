@@ -1,0 +1,18 @@
+
+/*
+ * 旧的盒子模型 
+ */
+
+ .display-box{
+     display: -webkit-box;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: box;
+ }
+
+ .box-align(@align:center){
+     -webkit-box-pack:@align;
+     -moz-box-pack: @align;
+     -ms-flex-pack: @align;
+     box-pack:@align;
+ }

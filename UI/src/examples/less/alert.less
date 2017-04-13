@@ -1,0 +1,75 @@
+@import "base.less";
+
+@button-height:40px;
+
+.popup-view{
+    position:relative;
+    height: 100%;
+    
+    .popup-alert{
+        position:fixed;
+        z-index:9001;
+        height: 100%;
+        width:100%;
+
+        &.show{
+            display: block;
+        }
+
+        &.hide{
+            display: none;
+        }
+    }
+
+    .alert-content{
+        .absolute-center-xy;
+        .radius(5px);
+        background-color:#fff;
+        .to-rem(width,250px);
+        .animation(alert-wrapper 1s linear);
+        
+        &.show{
+            display: block;
+        }
+
+        &.hide{
+            display: none;
+            
+        }
+
+        .alert-words{
+
+            .flex-full;
+            .display-flex;
+            .flex-center-xy;
+            .to-rem(height,100px);
+            color:rgba(0,0,0,.6);
+        }
+
+        .alert-button{
+            border-top:1px solid rgba(0,0,0,.3);
+            color: @blue-light;
+            text-align: center;
+            .to-rem(height,@button-height);
+            .to-rem(line-height,@button-height);
+
+            &:active{
+                background-color:@white-active;
+            }
+        }
+    }
+
+    @keyframes alert-wrapper{
+        from{
+            top:40%;
+            .transform(opacity(.1));
+            
+        }
+
+        to{
+            top:50%;
+            .transform(opacity(1));
+            
+        }
+    }
+}

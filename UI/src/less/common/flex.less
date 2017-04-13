@@ -1,0 +1,254 @@
+/*
+ * 弹性盒布局的兼容性写法
+ * @mixin [display-flex]  定义一个弹性盒子
+ * @mixin [flex-direction]  定义弹性盒子的方向  |row|row-reverse|column|column-reverse
+ * @mixin [flex]  定义弹性系数
+ * @mixin [flex-align]  主轴内容对齐方式 center|flex-start|flex-end|space-between|space-around
+ * @mixin [flex-column] 垂直方向的弹性盒
+ * @mixin [flex-row] 水平方向的弹性盒
+ * @mixin [align-items] 侧轴单行的内容对齐方式 center|flex-start|flex-end|strench
+ * @mixin [align-self] 定义flex单个子项在侧轴（纵轴）方向上的对齐方式 center|flex-start|flex-end|strench
+ * @mixin [flex-wrap] 换行
+ * @mixin [flex-order] 排序
+ * @mixin [align-content] 有多行情况下，侧轴方法上各行之间的对齐方式
+ * @mixin [flex-grow]
+ * @mixin [flex-shrink]
+ * @mixin [flex-basis]
+ */
+
+.flex-full{
+    .flex(1);
+}
+
+//弹性盒布局的兼容性写法
+.display-flex(){
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+//带方向属性的弹性盒布局
+.display-flex(@orient){
+    .display-flex;
+    .flex-direction(@orient);
+}
+
+//定义弹性盒子的方向 row／row-reverse/column/column-reverse
+.flex-direction(@direction:row){
+
+    //row
+    & when(@direction = row){
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -ms-flex-direction: row;
+        -webkit-flex-direcion:row;
+        flex-direction: row;
+    }
+
+    //row-reverse
+    & when(@direction = row-reverse){
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -moz-box-orient: horizontal;
+        -moz-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        -webkit-flex-direcion:row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    //column
+    & when(@direction = column){
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direcion:column;
+        flex-direction: column;
+    }
+
+    //column
+    & when(@direction = column-reverse){
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -moz-box-orient: vertical;
+        -moz-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        -webkit-flex-direcion:column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+
+//定义弹性系数
+.flex(@num:1){
+    -webkit-box-flex: @num;
+    -moz-box-flex:@num;
+    -webkit-flex:@num;
+    -ms-flex: @num;
+    flex:@num;
+}
+
+//定义主轴内容的对齐方式
+// #-moz-没有新版的兼容写法#
+.flex-align(@align:center){
+
+    //center
+    & when(@align = center){
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+    }
+
+    //start
+    & when(@align = flex-start){
+        -webkit-box-pack:start;
+        -moz-box-pack:start;
+        -ms-flex-pack:start;
+        -webkit-justify-content:flex-start;
+        justify-content:flex-start;
+    }
+
+    //end
+    & when(@align = flex-end){
+        -webkit-box-pack:end;
+        -moz-box-pack:end;
+        -ms-flex-pack:end;
+        -webkit-justify-content:flex-end;
+        justify-content:flex-end;
+    }
+
+    //space-between 两端对齐
+    //旧版用justify表示两端对齐
+    & when(@align = space-between){
+        -webkit-box-pack: justify;
+        -moz-box-pack:justify;
+        -ms-flex-pack:justify;
+        -webkit-justify-content:space-between;
+        justify-content:space-between;
+    }
+
+    //space-around
+    //旧版没有space-around的功能
+    & when(@align = space-around){
+        -webkit-justify-content:space-between;
+        justify-content:space-between;
+    }
+}
+
+//带对齐属性的column-flex
+.flex-column(@flex-align:center){
+    .display-flex(column);
+    .flex-align(@flex-align);
+}
+
+//带对齐属性大row-flex
+.flex-row(@flex-align:center){
+    .display-flex(row);
+    .flex-align(@flex-align);
+}
+
+//没有-o-前缀的旧版兼容写法
+.align-items(@align:center){
+
+    //center
+    & when(@align=center){
+        -webkit-box-pack: center;
+        -moz-box-pack:center;
+        -ms-flex-align: center;
+        -webkit-align-items:center;
+        align-items: center;
+    }
+
+    //start
+    & when(@align=flex-start){
+        -webkit-box-pack: start;
+        -moz-box-pack:start;
+        -ms-flex-align: start;
+        -webkit-align-items:flex-start;
+        align-items: flex-start;
+    }
+
+    //end
+    & when(@align=flex-end){
+        -webkit-box-pack: end;
+        -moz-box-pack:end;
+        -ms-flex-align: end;
+        -webkit-align-items:flex-end;
+        align-items: flex-end;
+    }
+
+    //stretch:拉伸
+    & when(@align=stretch){
+        -webkit-box-pack: stretch;
+        -moz-box-pack:stretch;
+        -ms-flex-align: stretch;
+        -webkit-align-items:stretch;
+        align-items: stretch;
+    }
+
+    //baseline:基线对齐
+}
+
+//定义flex单个子项在侧轴（纵轴）方向上的对齐方式
+.align-self(@align:center){
+    -webkit-align-self:@align;
+    align-self:@align;
+}
+
+//这个属性在手机浏览器的兼容性不好，用fload代替换行
+.flex-wrap(@wrap:wrap){
+
+    & when(@wrap = wrap){
+        -webkit-box-lines:multiple;
+        -moz-box-lines:multiple;
+        -ms-box-lines:multiple;
+    }
+
+    & when(@wrap = wrap){
+        -webkit-box-lines:single;
+        -moz-box-lines:single;
+        -ms-box-lines:single;
+    }
+
+    -webkit-flex-wrap:wrap;
+    flex-wrap:wrap;
+}
+
+.flex-order(@order:0){
+    -webkit-box-ordinal-group:@order;
+    -moz-box-ordinal-group:@order;
+    -ms-box-ordinal-group:@order;
+    -webkit-order:@order;
+    order:@order;
+}
+
+//当伸缩容器的侧轴还有多余空间时，本属性可以用来调准「伸缩行」在伸缩容器里的对齐方式,
+//在只有一行的伸缩容器上没有效果
+//align-items 是在侧轴单行方向的展示方式
+.align-content(@align:center){
+    -webkit-align-content:@align;
+    align-content:@align;
+}
+
+//扩展比率
+.flex-grow(@num:0){
+    -webkit-flex-grow:@num;
+    flex-grow:@num;
+}
+
+//收缩比率
+.flex-shrink(@num:1){
+    -webkit-flex-shrink:@num;
+    flex-shrink:@num;
+}
+
+//弹性盒伸缩基准值
+.flex-basis(@value:auto){
+    -webkit-flex-basis:@value;
+    flex-basis:@value;
+}
+
+

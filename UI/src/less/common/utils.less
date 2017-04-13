@@ -1,0 +1,42 @@
+@import "variables";
+
+//转换px成rem单位
+.to-rem(@prop:font-size,@values:@font-size-base,@base:@font-size-html){
+    @length:length(@values);
+
+    .loop(@index:1) when (@index <= @length){
+        //取到index位置的value
+        @value: extract(@values,@index);
+
+        .convert-to-rem(@origin) when (ispixel(@origin)){
+            @rem: unit(@value/@base,rem);
+        }
+
+        .convert-to-rem(@origin) when (default()){
+            @rem:@origin;
+        }
+
+        .convert-to-rem(@value);
+
+        @{prop} +_:@rem;
+
+        .loop(@index+1);
+    }
+
+    .loop();
+}
+
+.bg-variant(@color) {
+  background-color: @color;
+  a&:hover,
+  a&:focus {
+    background-color: darken(@color, 10%);
+  }
+}
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}

@@ -1,0 +1,295 @@
+/*
+ * 
+ */
+/*
+ * font-size
+ */
+/*
+ * color
+ */
+/*
+ * border-radius
+ */
+/*
+ * space
+ */
+/*
+ * input
+ */
+/*
+ * radio
+ */
+/*
+ * grid
+ */
+/*
+ * business
+ */
+/*
+ * header
+ */
+/*
+ * line-height
+ */
+/*
+ * @mixin [ellipsis] 添加省略号
+ */
+.word-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+}
+.border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/*
+ * 弹性盒布局的兼容性写法
+ * @mixin [display-flex]  定义一个弹性盒子
+ * @mixin [flex-direction]  定义弹性盒子的方向  |row|row-reverse|column|column-reverse
+ * @mixin [flex]  定义弹性系数
+ * @mixin [flex-align]  主轴内容对齐方式 center|flex-start|flex-end|space-between|space-around
+ * @mixin [flex-column] 垂直方向的弹性盒
+ * @mixin [flex-row] 水平方向的弹性盒
+ * @mixin [align-items] 侧轴单行的内容对齐方式 center|flex-start|flex-end|strench
+ * @mixin [align-self] 定义flex单个子项在侧轴（纵轴）方向上的对齐方式 center|flex-start|flex-end|strench
+ * @mixin [flex-wrap] 换行
+ * @mixin [flex-order] 排序
+ * @mixin [align-content] 有多行情况下，侧轴方法上各行之间的对齐方式
+ * @mixin [flex-grow]
+ * @mixin [flex-shrink]
+ * @mixin [flex-basis]
+ */
+.flex-full {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/*
+ * 旧的盒子模型 
+ */
+.display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+}
+.inline-center-x {
+  text-align: center;
+}
+.margin-center-xy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.absolute-center-y {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+.absolute-center-x {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+.absolute-center-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.flex-center-y {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-center-x {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.flex-center-y {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-center-xy {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.loading-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.loading-wrapper {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  text-align: center;
+  -webkit-animation: loading-wrapper 2s ease-in-out 0.2s infinite;
+  -moz-animation: loading-wrapper 2s ease-in-out 0.2s infinite;
+  -o-animatio: loading-wrapper 2s ease-in-out 0.2s infinite;
+  -ms-animation: loading-wrapper 2s ease-in-out 0.2s infinite;
+  animation: loading-wrapper 2s ease-in-out 0.2s infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+.loading-wrapper::after {
+  content: " ";
+  position: absolute;
+  display: inline-block;
+  -moz-border-radius: 100%;
+  /* Firefox */
+  -webkit-border-radius: 100%;
+  /* Safari 和 Chrome */
+  border-radius: 100%;
+  background-color: #6fa8dc;
+}
+.loading-wrapper:nth-child(1) {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.loading-wrapper:nth-child(1)::after {
+  width: 10px;
+  height: 10px;
+}
+.loading-wrapper:nth-child(2) {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  -o-animation-delay: 0.8s;
+  -ms-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.loading-wrapper:nth-child(2)::after {
+  width: 8px;
+  height: 8px;
+}
+.loading-wrapper:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.loading-wrapper:nth-child(3)::after {
+  width: 6px;
+  height: 6px;
+}
+.loading-wrapper:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  -o-animation-delay: 0.4s;
+  -ms-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.loading-wrapper:nth-child(4)::after {
+  width: 4px;
+  height: 4px;
+}
+.loading-wrapper:nth-child(5) {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  -ms-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.loading-wrapper:nth-child(5)::after {
+  width: 2px;
+  height: 2px;
+}
+@keyframes loading-wrapper {
+  form {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

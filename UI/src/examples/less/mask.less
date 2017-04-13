@@ -1,0 +1,25 @@
+@import "base.less";
+
+@button-height:40px;
+
+.popup-view{
+    position:relative;
+    height: 100%;
+    
+    .mask{
+        position:fixed;
+        z-index:9000;
+        height: 100%;
+        width:100%;
+        .linear-gradient(top,rgba(0,0,0,.70),rgba(0,0,0,.75));
+
+        &.show{
+            display: block;
+        }
+
+        &.hide{
+            .transition(opacity .5s linear);
+            .opacity(0)
+        }
+    }
+}

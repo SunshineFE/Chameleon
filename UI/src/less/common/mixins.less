@@ -1,0 +1,172 @@
+
+@import "variables.less";
+@import "utils.less";
+
+/*
+ * @mixin [ellipsis] 添加省略号
+ */
+
+
+.opacity(@value){
+    //百分号，直接去掉百分号
+    & when (ispercentage(@value)){
+        @output:unit(@value);
+        filter:~"alpha(opacity=@{output})"
+    }
+
+    //数字需要进行转换
+    & when not (ispercentage(@value)){
+        @output:round(@value * 100);
+        filter:~"alpha(opacity=@{output})"
+    }
+    
+    opacity:@value;
+
+}
+//行高與高度一致
+.line-height-same(@value) {
+    height: @value;
+    line-height: @value;
+}
+
+//设置表现形式为table-cell
+.layout-table-cell(@valign: middle) {
+    float: none;
+    display: table-cell;
+    vertical-align: @valign;
+}
+
+//圓角
+.radius(@radius: @base-radius) {
+    -moz-border-radius: @radius; /* Firefox */
+    -webkit-border-radius: @radius; /* Safari 和 Chrome */
+    border-radius: @radius;
+}
+
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+//文字溢出部分处理 ellipisis|clip
+.text-overflow(@value:ellipsis) {
+    -ms-text-overflow: @value;
+    -o-text-overflow: @value;
+    text-overflow: @value;
+}
+
+ //字数超长之后自动添加省略号
+.ellipsis(@rows: 2) {
+    & when (@rows = 1) {
+        display: block;
+        white-space: nowrap;
+        .text-overflow();
+    }
+
+    //多行，webkit 引擎下才支持
+    & when (@rows > 1) {
+        .display-box;
+        .flex-direction(column);
+        -webkit-line-clamp: @rows;
+        white-space: normal;
+    }
+
+    word-break: break-word;
+    overflow: hidden;
+}
+
+//長英文、數字字符強制換行
+.word-break{
+    -ms-word-break: break-all;
+    word-break:break-all;
+}
+
+//將盒模型設置成border-box
+.border-box{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:border-box;
+}
+
+//將盒模型設置成content-box
+.content-box{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+}
+
+//隐藏被旋转的 div 元素的背面
+.backface-hidden() {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.box-shadow(@prop) {
+
+    /*@length:length(@arguments);
+
+    .set-box-shadow(@n:1) when (@n <= @length){
+        @prop:@arguments;
+
+        -moz-box-shadow+: @prop;
+	    -webkit-box-shadow+: ~"@{prop}";
+	    box-shadow+: ~"@{prop}";
+
+        .set-box-shadow(@n + 1);
+    }
+
+    .set-box-shadow(1);*/
+    -moz-box-shadow: ~"@{prop}";
+	-webkit-box-shadow: ~"@{prop}";
+	box-shadow: ~"@{prop}";
+}
+
+.box-shadow(@prop1,@prop2){
+    -moz-box-shadow: ~"@{prop1},@{prop2}";
+	-webkit-box-shadow: ~"@{prop1},@{prop2}";
+	box-shadow: ~"@{prop1},@{prop2}";
+}
+
+// border-pos: top right bottom left all
+.wg-border-1px (@border-pos: bottom, @border-color: @border-color-light){
+    @border-shadow-color: rgba(0, 0, 0, 0.5);
+
+    & when (@border-pos = top) {
+        .box-shadow(0 1px 1px -1px @border-shadow-color inset);
+        //border-top: 1px solid @border-color;
+    }
+
+    & when (@border-pos = right) {
+        .box-shadow(1px 0 1px -1px @border-shadow-color);
+        //border-right: 1px solid @border-color;
+    }
+
+    & when (@border-pos = bottom) {
+        .box-shadow(0 1px 1px -1px @border-shadow-color);
+        //border-bottom: 1px solid @border-color;
+    }
+
+    & when (@border-pos = left) {
+        .box-shadow(1px 0 1px -1px @border-shadow-color inset);
+        //border-left: 1px solid @border-color;
+    }
+
+    & when (@border-pos = all) {
+        .box-shadow(0 0 1px 0 @border-shadow-color);
+        //border: 1px solid @border-color;
+    }
+}

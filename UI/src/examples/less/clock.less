@@ -1,0 +1,72 @@
+@import "base.less";
+
+@clock-container-size:60px;
+
+.popup-container{
+    position: fixed;
+    height: 100%;
+    width:100%;
+    
+    .clock-container{
+        .absolute-center-xy;
+        width:@clock-container-size*2;
+        height:@clock-container-size*2;
+    }
+    
+    .clock-wrapper{
+       position:absolute;
+       width:100%;
+       height: 100%;
+        /*.linear-gradient(45deg,rgba(0,0,0,.1),rgba(0,0,0,.3));*/
+
+        .clock{
+            .absolute-center-xy;
+            width:@clock-container-size;
+            height:@clock-container-size;
+            .radius(100%);
+            border:10px solid #1196EE;
+        }
+
+        &.left-mask{
+            left:0;
+            width:50%;
+            background-color:@page-background;
+        }
+
+        &.left{
+            .transform(rotate(-45deg));
+            .clock{
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+
+        &.right {
+            .transform(rotate(-45deg));
+            .clock{
+                border-left-color: transparent;
+                border-top-color: transparent;
+            }
+            .opacity(0);
+            z-index:1;
+
+            &.show{
+                .opacity(1);
+            }
+        }
+    }
+
+    
+
+    .number{
+        font-size: @font-size-big;
+        color: rgba(0,0,0,0.5);
+        .absolute-center-xy;
+
+        &.percentage{
+            &::after{
+                content:"%";
+            }
+        }
+    }
+}

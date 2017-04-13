@@ -1,0 +1,152 @@
+
+
+/*
+ * 
+ */
+@page-min-width:          320px;
+@page-background:         rgb(247, 250, 252);
+
+@font-family-base:        Arial, "Lucida Grande", Verdana, "Microsoft YaHei", hei;
+@font-family-web:         "Microsoft JhengHei","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+/*
+ * font-size
+ */
+@font-size-html:16px;
+@font-size-mini:.75rem; //12px
+@font-size-small:.875rem; //14px
+@font-size-base:1rem; //16px
+@font-size-big:1.125rem; //18px
+@font-size-bigger:1.25rem; //20px
+@font-size-large:1.375rem; //22px
+@font-size-larger:1.5rem; //24px
+@font-size-huge:1.625rem; //26px
+
+
+/*
+ * color
+ */
+@white-active:      #d9d9d9;
+
+//gray
+@gray-light:#999;
+@gray:#666666;
+@gray-dark:#434343;
+@gray-base:#5a5a5a;
+
+//blue
+@blue-light:#6fa8dc;
+@blue:#6d9eeb;
+@blue-dark:#3c78d8;
+@blue-active:#0f709a;
+
+//orange
+@orange-light:#f6b26b;
+@orange:#e69138;
+@orange-dark:#e57806;
+
+//yellow
+@yellow-light:lighten(@yellow,5%);
+@yellow:	#ffffcc;
+@yellow-dark:darken(@yellow,5%);
+
+//red
+@red-light:#f24a4a;
+@red:#f02901;
+@red-dark:#cc0000;
+
+//red
+@white-light:lighten(#ffffff,15%);
+@white:#ffffff;
+@white-dark:darken(@white,10%);
+
+//green
+@green-light:#a7fbbc;
+@green:#4af274;
+@green-dark:#0c7e28;
+
+//black
+@black-light:rgba(0,0,0,.5);
+@black:rgba(0,0,0,.85);
+@black-dark:rgba(0,0,0,.95);
+
+//font-color
+@font-color-default:#333;
+@font-color-light:@gray;
+
+//link-color
+@link-color:              #4183C4;
+@link-hover-color:        darken(saturate(@link-color, 20), 15, relative);
+
+//Highlighted Text
+@highlight-bg-color:    #CCE2FF;
+@highlight-color:         @font-color-default;
+
+@input-highlight-bg-color:rgba(100, 100, 100, 0.4);
+@input-highlight-color:   @font-color-default;
+
+//border-color
+@border-color-light:      #eee;
+@border-color-base:       #d7d7d7;
+@border-color-weight:     #4e5f71;
+
+
+/*
+ * border-radius
+ */
+@border-radius-small:     3px;
+@border-radius-base:      4px;
+@border-radius-big:     6px;
+
+
+/*
+ * space
+ */
+@space-mini:              0.1875rem;//3px;
+@space-small:             0.3125rem;//5px;
+@space-base:              0.625rem;//10px;
+@space-big:               0.9375rem;//15px;
+@space-large:             1.25rem;//20px;
+@space-huge:              1.5625rem;//25px;
+
+
+/*
+ * input
+ */
+@input-space-x:                  @space-small;//5px
+
+
+/*
+ * radio
+ */
+@radio-height:                2.8125rem;//45px
+
+/*
+ * grid
+ */
+@grid-gutter-width:              0.9375rem;//15px
+@grid-border-color:              rgba(34,36,38,0.15);
+
+
+/*
+ * business
+ */
+@price-color:                    #ff8200;// ff9913
+@price-fontsize:                 @font-size-bigger;//18px
+
+
+/*
+ * header
+ */
+@header-height:                  2.8125rem;//44px
+@header-bgcolor:                 @blue;
+@header-input-height:            1.75rem;//28px
+
+
+/*
+ * line-height
+ */
+@line-height:             1.4285em;
+@line-height-base:        1.375; // 22/14
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~22px

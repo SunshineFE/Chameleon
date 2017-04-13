@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+    <div class="main">
+
+
+        <div class="viewport">
+            <div class="login-page">
+
+
+                <div class="cover"></div>
+                <div class="personal">
+                    <header class="header">
+                        <div class="icon-button"><i class="font-icon icon-category"></i></div>
+                        <div class="title">
+
+                        </div>
+                        <div class="icon-button"><i class="font-icon icon-search"></i></div>
+                    </header>
+                    <div class="content-top"></div>
+                    <div class="content-mask"></div>
+                    <div class="person-button">
+                        <i class="font-icon icon-add"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.person-button').addEventListener(
+            'click',function(e){
+                let target = e.currentTarget;
+                target.classList.add('active');
+
+                document.querySelector('.content-top').classList.add('hide');
+                document.querySelector('.content-mask').classList.add('hide');
+
+                setTimeout(function(){
+                    target.classList.remove('active');
+                    target.classList.add('hide');
+                    document.querySelector('.personal').classList.add('bg-active');
+                },500)
+            }
+        )
+    </script>
+</body>
+
+</html>

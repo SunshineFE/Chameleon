@@ -1,0 +1,32 @@
+@import "variables";
+@import "mixins";
+@code-color:#657b83;
+
+.code{
+    padding:@space-base @space-base 0;
+    color:@code-color;
+
+    p{
+        color:@gray-dark;
+        font-weight: 900;
+    }
+
+    pre{
+        padding: @space-base;
+        margin-bottom: @space-big;
+        background: @yellow-light;
+        word-wrap: normal;
+        word-break: break-word;
+        white-space: pre-wrap;
+        overflow: auto;
+        border: 1px solid #ccc;
+
+        .radius(3px);
+    }
+
+    code{
+        padding:0;
+        white-space: pre;
+        font-size: @font-size-mini;
+    }
+}

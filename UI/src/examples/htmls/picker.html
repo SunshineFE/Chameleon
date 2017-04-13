@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>template</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/picker.css">
+    </head>
+    <body>
+        <div class="main">
+            <header class="header bg-color-blue">
+                <div class="icon-button"><i class="font-icon icon-back"></i></div>
+                <div class="title">
+                    <span>
+                        picker
+                    </span>
+                </div>
+                <div class="icon-button"><i class="font-icon icon-category"></i></div>
+            </header>
+
+            <div class="viewport">
+
+            </div>
+
+            <div class="popup-view">
+                <div class="mask">
+                </div>
+                    <div class="picker-wrapper">
+                        <header class="picker-header">
+                            <div class="button cancel">取消</div>
+                            <div class="button confirm">确认</div>
+                        </header>
+                        <div class="picker-content">
+                            <section class="picker-slider">
+                                <ul class="picker-list">
+                                    <li>2010</li>
+                                    <li>2011</li>
+                                    <li>2012</li>
+                                    <li>2013</li>
+                                    <li>2014</li>
+                                    <li>2015</li>
+                                    <li>2016</li>
+                                    <li>2016</li>
+                                    <li>2018</li>
+                                    <li>2019</li>
+                                    <li>2020</li>
+                                    <li>2021</li>
+                                    <li>2022</li>
+                                    <li>2023</li>
+                                    <li>2024</li>
+                                </ul>
+                            </section>
+                            <section class="picker-slider">
+                                <ul class="picker-list">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                </ul>
+                            </section>
+                            <section class="picker-slider">
+                                <ul class="picker-list">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                </ul>
+                            </section>
+                            <div class="picker-lines"></div>
+                            <section class="picker-mask"></section>
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script>
+        var $element = document.querySelector('.picker-slider')
+        $element && $element.addEventListener('click',function(e){
+            var targer = e.currentTarget;
+
+            targer.children[0].style.top = '-7.5rem';
+        })
+        </script>
+        <script>
+        var $cancel = document.querySelector('.cancel')
+        $cancel && $cancel.addEventListener('click',function(e){
+            var $wrapper = document.querySelector('.picker-wrapper');
+
+            $wrapper.classList.add('hide');
+        })
+        </script>
+        <script>
+        var $confirm = document.querySelector('.confirm')
+        $confirm && $confirm.addEventListener('click',function(e){
+            var $wrapper = document.querySelector('.picker-wrapper');
+
+            $wrapper.classList.add('hide');
+        })
+        </script>
+    </body>
+</html>

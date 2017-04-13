@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>template</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/alert.css">
+        <link rel="stylesheet" type="text/css" href="../css/loading-1.css">
+    </head>
+    <body>
+        <div class="main">
+            <header class="header bg-color-blue">
+                <div class="icon-button"><i class="font-icon icon-back"></i></div>
+                <div class="title">
+                    <span>
+                        loading
+                    </span>
+                </div>
+                <div class="icon-button"><i class="font-icon icon-category"></i></div>
+            </header>
+
+            <div class="viewport">
+                
+            </div>
+
+            <div class="popup-view">
+                <div class="popup-alert">
+                    <div class="loading-container">
+                    <div class="loading-wrapper">
+                        <span class="loading-bullet"></span>
+                    </div>
+                    <div class="loading-wrapper">
+                        <span class="loading-bullet"></span>
+                    </div>
+                    <div class="loading-wrapper">
+                        <span class="loading-bullet"></span>
+                    </div>
+                    <div class="loading-wrapper">
+                        <span class="loading-bullet"></span>
+                    </div>
+                    <div class="loading-wrapper">
+                        <span class="loading-bullet"></span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var $element = document.querySelector('.popup-alert')
+            $element.addEventListener('click',function(){
+                $element.classList.add('hide');
+            });
+        </script>
+    </body>
+</html>

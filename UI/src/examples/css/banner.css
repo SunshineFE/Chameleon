@@ -1,0 +1,295 @@
+/*
+ * 
+ */
+/*
+ * font-size
+ */
+/*
+ * color
+ */
+/*
+ * border-radius
+ */
+/*
+ * space
+ */
+/*
+ * input
+ */
+/*
+ * radio
+ */
+/*
+ * grid
+ */
+/*
+ * business
+ */
+/*
+ * header
+ */
+/*
+ * line-height
+ */
+/*
+ * @mixin [ellipsis] 添加省略号
+ */
+.word-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+}
+.border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/*
+ * 弹性盒布局的兼容性写法
+ * @mixin [display-flex]  定义一个弹性盒子
+ * @mixin [flex-direction]  定义弹性盒子的方向  |row|row-reverse|column|column-reverse
+ * @mixin [flex]  定义弹性系数
+ * @mixin [flex-align]  主轴内容对齐方式 center|flex-start|flex-end|space-between|space-around
+ * @mixin [flex-column] 垂直方向的弹性盒
+ * @mixin [flex-row] 水平方向的弹性盒
+ * @mixin [align-items] 侧轴单行的内容对齐方式 center|flex-start|flex-end|strench
+ * @mixin [align-self] 定义flex单个子项在侧轴（纵轴）方向上的对齐方式 center|flex-start|flex-end|strench
+ * @mixin [flex-wrap] 换行
+ * @mixin [flex-order] 排序
+ * @mixin [align-content] 有多行情况下，侧轴方法上各行之间的对齐方式
+ * @mixin [flex-grow]
+ * @mixin [flex-shrink]
+ * @mixin [flex-basis]
+ */
+.flex-full {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/*
+ * 旧的盒子模型 
+ */
+.display-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+}
+.inline-center-x {
+  text-align: center;
+}
+.margin-center-xy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.absolute-center-y {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+.absolute-center-x {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+.absolute-center-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.flex-center-y {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-center-x {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.flex-center-y {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.flex-center-xy {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.banner-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0 auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.banner-container .banner-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.banner-container .banner-wrapper .banner-slide {
+  position: relative;
+  width: 100%;
+  height: 199.81px;
+  background: #999999;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.banner-container .banner-wrapper .banner-slide:nth-child(1) {
+  background: #999999;
+}
+.banner-container .banner-wrapper .banner-slide:nth-child(2) {
+  background: #a7fbbc;
+}
+.banner-container .banner-wrapper .banner-slide:nth-child(3) {
+  background: #ffffe6;
+}
+.banner-container .banner-wrapper .banner-slide:nth-child(4) {
+  background: #6fa8dc;
+}
+.banner-container .banner-wrapper .banner-slide:nth-child(5) {
+  background: #f24a4a;
+}
+.banner-container .banner-wrapper-img {
+  height: auto;
+}
+.banner-container .banner-wrapper-img .banner-slide {
+  height: auto;
+}
+.banner-container .banner-wrapper-img img {
+  width: 100%;
+}
+.banner-container .banner-pagination {
+  position: absolute;
+  bottom: 0.3125rem;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+.banner-container .banner-pagination-bullet {
+  display: inline-block;
+  margin: 0 3px;
+  width: 8px;
+  height: 8px;
+  background: #5a5a5a;
+  -moz-border-radius: 100%;
+  /* Firefox */
+  -webkit-border-radius: 100%;
+  /* Safari 和 Chrome */
+  border-radius: 100%;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.banner-container .banner-pagination-bullet.active {
+  background: #ffffff;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.banner-container .banner-button {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 40px;
+  height: 100%;
+  background: #666666;
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.banner-container .banner-button:hover {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+.banner-container .banner-button-prev {
+  left: 0;
+}
+.banner-container .banner-button-next {
+  right: 0;
+}

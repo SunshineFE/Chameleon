@@ -1,0 +1,114 @@
+@import "base.less";
+
+@picker-item-height:2.5rem;
+@picker-header-height:2.8rem;
+@picker-z-index:9100;
+
+.picker-wrapper{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width:100%;
+    color:rgba(0,0,0,.5);
+    z-index:@picker-z-index;
+    .flex-column(flex-start);
+    .border-box;
+    .box-shadow(0 -5px 20px rgba(0,0,0,0.3));
+
+    &.hide{
+        .transition(opacity .5s linear);
+        .opacity(0)
+    }
+
+    
+    .picker-header{
+        .display-flex;
+        .flex-align(space-between);
+        .linear-gradient(top,#0e7bef,#0d73da);
+        width:100%;
+        color:#fff;
+        font-size:@font-size-small;
+        height: @picker-header-height;
+
+        .button{
+            padding:0 10px;
+            .line-height-same(@picker-header-height);
+            .border-box;
+
+            &:active,&:hover{
+                .linear-gradient(top,darken(#0e7bef,5%),darken(#0d73da,5%));
+            }
+        }
+    }
+
+    .picker-content,.picker-mask{
+        width:100%;
+        height:@picker-item-height * 5;
+    }
+
+    .picker-content{
+        .display-flex;
+        background:transparent;
+        z-index:@picker-z-index+2;
+        position:relative;
+
+        .picker-slider{
+            .flex(1);
+            z-index: @picker-z-index;
+            position:relative;
+            height: 100%;
+            width:100%;
+            overflow: hidden;
+
+            & .picker-list li::after{
+                font-size: @font-size-small;
+            }
+
+            &:nth-child(1){
+                & .picker-list li::after{
+                    content:"年";
+                }
+            }
+
+            &:nth-child(2){
+                & .picker-list li::after{
+                    content:"月";
+                }
+            }
+
+            &:nth-child(3){
+                & .picker-list li::after{
+                    content:"日";
+                }
+            }
+                
+            .picker-list{
+                position:absolute;
+                width:100%;
+                .transition(all 5s linear);
+                
+                li{
+                    height:@picker-item-height;
+                    .flex-center-xy();
+                }
+
+                
+            }
+        }
+    }
+
+    .picker-mask{
+        position: absolute;
+        .linear-gradient(#fff 0,rgba(245,245,245,0) 52%,rgba(245,245,245,0) 48%,#fff);
+        z-index:@picker-z-index+5;
+        pointer-events: none;
+    }
+
+    .picker-lines{
+        .absolute-center-y;
+        height: @picker-item-height;
+        width: 100%;
+        border-top:1px solid rgba(0,0,0,.2);
+        border-bottom:1px solid rgba(0,0,0,.2);
+    }
+}

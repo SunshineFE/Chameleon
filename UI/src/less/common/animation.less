@@ -1,0 +1,75 @@
+
+.linear-gradient(@direction:top,@start:#000,@end:#fff){
+    
+    background-image:-webkit-linear-gradient(@direction,@start,@end);
+    background-image:-moz-linear-gradient(@direction,@start,@end);
+    background-image:-o-linear-gradient(@direction,@start,@end);
+
+    //现在大部分浏览器均不支持正式版
+    background-image:linear-gradient(@direction,@start,@end);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB);/*IE<9>*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)";/*IE8+*/
+    
+    /* Safari 4-5, Chrome 1-9  版本太老，不考虑兼容*/ 
+    /*& when(@direction = top) {
+        background-image:-webkit-gradient(linear,center top,center bottom,from(@start),to(@end));
+    }
+
+    & when(@direction = top) {
+        background-image:-webkit-gradient(linear,left center,right center,from(@start),to(@end));
+    }*/
+}
+
+.linear-gradient(@prop1,@prop2,@prop3,@prop4){
+    background-image:-webkit-linear-gradient(@prop1,@prop2,@prop3,@prop4);
+    background-image:-moz-linear-gradient(@prop1,@prop2,@prop3,@prop4);
+    background-image:-o-linear-gradient(@prop1,@prop2,@prop3,@prop4);
+}   
+
+.animation(@prop,@value){
+    -webkit-animation-@{prop}:@value;
+    -moz-animation-@{prop}:@value;
+    -o-animation-@{prop}:@value;
+    -ms-animation-@{prop}:@value;
+    animation-@{prop}:@value;
+}
+
+.animation(@value) when (default()){
+    -webkit-animation:@value;
+    -moz-animation:@value;
+    -o-animatio:@value;
+    -ms-animation:@value;
+    animation:@value;
+}
+
+.transition(@prop,@value){
+    -webkit-transition-@{prop}:@value;
+    -moz-transition-@{prop}:@value;
+    -o-transition-@{prop}:@value;
+    -ms-transition-@{prop}:@value;
+    transition-@{prop}:@value;
+}
+
+.transition(@value) when (default()){
+    -webkit-transition:@value;
+    -moz-transition:@value;
+    -o-transition:@value;
+    -ms-transition:@value;
+    transition:@value;
+}
+
+.transform(@prop,@value){
+    -webkit-transform-@{prop}:@value;
+    -moz-transform-@{prop}:@value;
+    -o-transform-@{prop}:@value;
+    -ms-transform-@{prop}:@value;
+    transform-@{prop}:@value;
+}
+
+.transform(@value) when (default()){
+    -webkit-transform:@value;
+    -moz-transform:@value;
+    -o-transform:@value;
+    -ms-transform:@value;
+    transform:@value;
+}
